@@ -243,3 +243,43 @@ This function is the core of the get_next_line project. It manages the process o
 - **ft_line_allocation:** Reads and appends data to the static buffer. This function interacts with read and handles memory allocation and management. </br>
 - **ft_next_line:** Processes the buffer to extract the next complete line, including handling newline characters.
 - **ft_rem_line:** Adjusts the buffer to retain any remaining data after a line has been extracted, ensuring the static buffer can continue from where it left off.
+
+## get_next_line_utils.c
+This file contains several utility functions that support the main get_next_line function. Each function plays a crucial role in handling string operations, memory allocation, and buffer management.
+</br>
+### ft_strchr
+``` c
+char	*ft_strchr(char *str, int c)
+{
+	size_t	i;
+	
+	i = 0;
+	if (!str)
+		return (0);
+	if (c == '\0')
+		return ((char *)&str[ft_strlen(str)]);
+	while (str[i])
+	{
+		if (str[i] == (char) c)
+			return ((char *)&str[i]);
+		i++;
+	}
+	return (0);
+}
+```
+### Purpose
+Searches for the first occurrence of the character c in the string str.
+### Parameters
+**char *str:*** The string to be searched.
+**int c:** The character to be found in str.
+### Return Value
+A string containing the next line from the file, including the terminating newline character _\n_, if present.
+Returns _NULL_ if there is nothing more to read or if an error occurred.
+### How it works
+- The function initializes a counter i to 0.
+- It checks if the input string str is NULL. If it is, it returns 0, indicating that there is no string to process.
+- It then enters a while loop that increments the counter i until it reaches the end of the string (the null byte \0).
+- Finally, it returns the value of i, which is the length of the string.
+
+### Use in get_next_line
+This function is used to determine the length of strings throughout the implementation, which is essential for various buffer and string operations
