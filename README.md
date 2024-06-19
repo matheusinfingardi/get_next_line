@@ -185,24 +185,24 @@ Returns _NULL_ if there is nothing more to read or if an error occurred.
 
 
 ### How it works
-**1- Static Variable Initialization:**
+**- Static Variable Initialization:**</br>
 The function uses a static char *str to maintain a buffer between successive calls. This static variable holds any remaining data that was not yet returned as a complete line.
 </br>
-**2- Validation:**
+**- Validation:** </br>
 The function first checks if BUFFER_SIZE is valid (greater than 0) and if the file descriptor fd is non-negative. If either condition is not met, it returns NULL.
 </br>
-**3- Reading from File Descriptor:**
+**- Reading from File Descriptor:** </br>
 It calls ft_line_allocation(fd, str), which reads data from the file descriptor and appends it to the existing str buffer. This function is responsible for handling the actual reading and buffer management.
 </br>
-**4- Check for read data:**
+**- Check for read data:** </br>
 If ft_line_allocation returns NULL, meaning no data was read or an error occurred, get_next_line returns NULL.
 </br>
-**5- Extracting the Next Line:**
+**- Extracting the Next Line:** </br>
 It then calls ft_next_line(str), which processes the buffer to extract the next complete line. This function returns the next line to be output by get_next_line.
 </br>
-**6- Managing the Buffer:**
+**- Managing the Buffer:** </br>
 After extracting the line, it updates str by calling ft_rem_line(str). This function adjusts the buffer to remove the part that has been returned and keep any remaining data for the next call.
 </br>
-**7- Returning the Line:**
+**- Returning the Line:** </br>
 Finally, the function returns the extracted line (out).
 </br>
