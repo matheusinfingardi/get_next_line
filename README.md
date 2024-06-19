@@ -28,9 +28,9 @@ It should work both for regular files and for the standard input (stdin).
 
 To meet the requirements of the 42 School, the project must adhere to specific rules and restrictions:
 
-### **Norm Compliance:**
-_The code must conform to the 42 Norm, which includes coding style, function usage, and code organization.
-All bonus files must also follow the Norm._
+ **Norm Compliance:**
+      The code must conform to the 42 Norm, which includes coding style, function usage, and code organization.
+      All bonus files must also follow the Norm.
 
   **Stability and Safety:**
       The function should not fail unexpectedly (e.g., segmentation faults, bus errors, double frees).
