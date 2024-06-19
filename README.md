@@ -142,3 +142,8 @@ This file will contain the main logic for the get_next_line function. It coordin
 </br>
 **get_next_line_utils.c** </br>
 This file provides auxiliary functions that support the main get_next_line function. These typically include utility functions for string manipulation and buffer handling, such as calculating the length of a string _(ft_strlen)_, searching for a character in a string _(ft_strchr)_, joining two strings _(ft_strjoin)_, and managing the buffer _(ft_line_allocation, ft_next_line, ft_rem_line)_.
+
+### How they work together
+- **Reading and Buffer Management:** get_next_line uses ft_line_allocation to read chunks from the file into a buffer. It manages how much data has been read and when to stop.
+- **String Processing:** Functions like ft_strlen, ft_strchr, and ft_strjoin are used to manipulate the buffer and manage the lines extracted from the file.
+- **Memory Management:** Proper memory allocation and deallocation are crucial to avoid leaks. Functions like ft_rem_line handle the cleanup of unused buffer parts.
