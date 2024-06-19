@@ -72,7 +72,6 @@ For the bonus part, create additional files:
 - **get_next_line_utils_bonus.c:** Auxiliary functions specific to the bonus part. </br>
 
 ## **Detailed Explanation**
-To understand each part of the code, we will analyze and explain:
 ### **Main Function (get_next_line):**
 **Objective:** Manage reading lines from the file described by fd.</br>
 **Process:** Detailed breakdown of how it reads in parts and constructs the final line to be returned.</br>
