@@ -174,7 +174,7 @@ Reads the next line from a file descriptor fd and returns it as a string.
 A string containing the next line from the file, including the terminating newline character _\n_, if present.
 Returns _NULL_ if there is nothing more to read or if an error occurred.
 ### How it works
--1 **Static Variable Initialization:**
+1- **Static Variable Initialization:**
 
     The function uses a static char *str to maintain a buffer between successive calls. This static variable holds any remaining data that was not yet returned as a complete line.
 ### Use in get_next_line
