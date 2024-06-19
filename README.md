@@ -91,3 +91,4 @@ _This is the header file for the get_next_line project. It contains the function
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 ```
+- **Guard Clause:** This #ifndef ... #define ... #endif pattern is a header guard. It prevents the file from being included multiple times in a single compilation unit, which can cause redefinition errors. If GET_NEXT_LINE_H is not defined, it defines it and includes the content between #define and #endif. If it’s already defined, the file is skipped.
