@@ -10,16 +10,16 @@ You need to implement the function get_next_line with the following prototype: <
 ``` c
 char *get_next_line(int fd);
 ```
-Parameter:
+### **Parameter:**
 
-    fd: The file descriptor from which to read the line.
+   fd: The file descriptor from which to read the line.
 
-Return Value:
+### **Return Value:**
 
-    The line read from the file, including the terminating newline character \n (unless it's the end of the file without a newline).
-    NULL if there is nothing more to read or if an error occurred.
+`    The line read from the file, including the terminating newline character \n (unless it's the end of the file without a newline).
+    NULL if there is nothing more to read or if an error occurred.```
 
-Expected Behavior:
-
+### **Expected Behavior:**
+`
     The function should allow reading a file line by line with successive calls.
-    It should work both for regular files and for the standard input (stdin).
+    It should work both for regular files and for the standard input (stdin).```
