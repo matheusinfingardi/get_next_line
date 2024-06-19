@@ -182,7 +182,31 @@ Returns _NULL_ if there is nothing more to read or if an error occurred.
 ### Use in get_next_line
 This function is used to determine the length of strings throughout the implementation, which is essential for various buffer and string operations
 
+## get_next_line.c
+``` c
+char	*get_next_line(int fd)
+{
+	char	*out;
+	static char	*str;
+	
+	if (BUFFER_SIZE <= 0 || fd < 0)
+		return (NULL);
+	str = ft_line_allocation(fd, str);
+	if (!str)
+		return (NULL);
+	out = ft_next_line(str);
+	str = ft_rem_line(str);
+	return (out);
+}
+```
 
+### Purpose
+Reads the next line from a file descriptor fd and returns it as a string.
+### Parameters
+- **int fd:** The file descriptor from which to read the line.
+### Return Value
+A string containing the next line from the file, including the terminating newline character \n, if present.
+Returns NULL if there is nothing more to read or if an error occurred.
 
 ### How it works
 - **Static Variable Initialization:** </br>
@@ -206,3 +230,5 @@ After extracting the line, it updates str by calling ft_rem_line(str). This func
 - **Returning the Line:** </br>
 Finally, the function returns the extracted line (out).
 </br>  </br>
+### Use in get_next_line
+This function is the core of the get_next_line project. It manages the process of reading from a file descriptor and returning one line at a time. By using a static variable, it maintains state across multiple calls, allowing it to continue reading from where it left off.
