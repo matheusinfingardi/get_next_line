@@ -82,3 +82,6 @@ For the bonus part, create additional files:
 - **get_next_line.c:** Contains the core logic for reading lines.
 - **get_next_line_utils.c:** Provides supporting utilities.
 - **get_next_line.h:** Defines the prototype of the function and any necessary headers.
+
+
+# get_next_line.h
