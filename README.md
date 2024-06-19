@@ -85,4 +85,9 @@ For the bonus part, create additional files:
 
 
 # get_next_line.h
-This is the header file for the get_next_line project. It contains the function prototypes, necessary includes, and macros used across the implementation files. Below is a detailed breakdown of its components.
+_This is the header file for the get_next_line project. It contains the function prototypes, necessary includes, and macros used across the implementation files. Below is a detailed breakdown of its components._
+
+``` c
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+```
