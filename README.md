@@ -270,16 +270,63 @@ char	*ft_strchr(char *str, int c)
 ### Purpose
 Searches for the first occurrence of the character c in the string str.
 ### Parameters
-**char *str:*** The string to be searched.
+**char *str:*** The string to be searched. </br>
 **int c:** The character to be found in str.
 ### Return Value
-A string containing the next line from the file, including the terminating newline character _\n_, if present.
-Returns _NULL_ if there is nothing more to read or if an error occurred.
+Returns a pointer to the first occurrence of c in str. </br>
+If c is \0 (null terminator), it returns a pointer to the end of str (pointing to the null terminator). </br>
+Returns NULL if str is NULL or if c is not found in str. </br>
 ### How it works
-- The function initializes a counter i to 0.
-- It checks if the input string str is NULL. If it is, it returns 0, indicating that there is no string to process.
-- It then enters a while loop that increments the counter i until it reaches the end of the string (the null byte \0).
-- Finally, it returns the value of i, which is the length of the string.
-
+- Initializes a counter i to 0.
+- Checks if str is NULL. If it is, returns NULL.
+- If c is \0, returns a pointer to the end of str using ft_strlen(str).
+- Iterates through str using a while loop to search for c.
+- Returns a pointer to the first occurrence of c when found.
 ### Use in get_next_line
-This function is used to determine the length of strings throughout the implementation, which is essential for various buffer and string operations
+Used in ft_line_allocation to check for the presence of a newline character (\n) in the current buffer str, indicating the end of a line.
+
+### ft_strjoin
+``` c
+char	*ft_strjoin(char *s1, char *s2)
+{
+	size_t	i;
+	size_t	j;
+	char	*out;
+
+	if (!s1)
+	{
+		s1 = (char *)malloc(sizeof(char) * 1);
+		s1[0] = '\0';
+	}
+	if (!s2)
+		return (NULL);
+	out = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (out == NULL)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s1[i])
+		out[j++] = s1[i++];
+	i = 0;
+	while (s2[i])
+		out[j++] = s2[i++];
+	out[j] = '\0';
+	free(s1);
+	return (out);
+}
+```
+### Purpose
+Concatenates two strings s1 and s2 and returns a new string.
+### Parameters
+**char *s1:*** The first string to concatenate. </br>
+**char *s2:*** The second string to concatenate.
+### Return Value
+Returns a newly allocated string that is the concatenation of s1 and s2. </br>
+Returns NULL if memory allocation fails or if s2 is NULL.
+### How it works
+- Handles cases where s1 might be NULL by allocating a minimal string.
+- Allocates memory for the resulting string out based on the combined lengths of s1 and s2, plus one for the null terminator.
+- Copies characters from s1 and s2 into out using while loops until the null terminators are encountered.
+- Frees the memory allocated for s1 since its contents have been copied into out.
+### Use in get_next_line
+Used in ft_line_allocation to check for the presence of a newline character (\n) in the current buffer str, indicating the end of a line.
