@@ -101,9 +101,9 @@ _This is the header file for the get_next_line project. It contains the function
 # include <sys/types.h>
 # include <fcntl.h>
 ```
-<stdio.h>: Standard I/O library for file operations like fopen, fread, etc., although stdio.h is not directly used in the project requirements.
-<stdlib.h>: Provides functions like malloc, free, and exit.
-<unistd.h>: Includes functions like read, close, and constants for file operations.
-<stddef.h>: Defines types and macros like size_t used for memory and array operations.
-<sys/types.h>: Defines data types used in system calls.
-<fcntl.h>: Provides file control options, like O_RDONLY for opening files in read-only mode.
+- **<stdio.h>:** Standard I/O library for file operations like fopen, fread, etc., although stdio.h is not directly used in the project requirements. </br>
+- **<stdlib.h>:** Provides functions like malloc, free, and exit. </br>
+- **<unistd.h>:** Includes functions like read, close, and constants for file operations. </br>
+- **<stddef.h>:** Defines types and macros like size_t used for memory and array operations.</br>
+- **<sys/types.h>:** Defines data types used in system calls.</br>
+- **<fcntl.h>:** Provides file control options, like O_RDONLY for opening files in read-only mode.</br>
