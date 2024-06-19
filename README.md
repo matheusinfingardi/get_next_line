@@ -465,3 +465,45 @@ Returns NULL if there are no complete lines left in str or if memory allocation 
 - Allocates memory for str to hold the remaining data in line after the newline character.
 - Copies remaining characters from line into str starting from the position after the newline character.
 - Frees line after copying and returns str as the updated
+
+
+# Overview get_next_line_bonus.c
+This file contains the implementation of the get_next_line function for the bonus part, which supports reading from multiple file descriptors (fd). It uses a static array str to maintain the buffer for each file descriptor separately.
+
+## get_next_line (bonus)
+``` c
+char	*get_next_line(int fd)
+{
+	char	*out;
+	static char	*str[4096];
+
+	if (BUFFER_SIZE <= 0 || fd < 0)
+		return (NULL);
+	str[fd] = ft_line_allocation(fd, str[fd]);
+	if (!str[fd])
+		return (NULL);
+	out = ft_next_line(str[fd]);
+	str[fd] = ft_rem_line(str[fd]);
+	return (out);
+}
+```
+### Purpose
+Reads and returns the next line from the file descriptor fd.
+### Parameters
+**int fd:** The file descriptor from which to read.
+### Return Value
+Returns a string containing the next line read from fd, including the newline character \n.
+Returns NULL if there are no more lines to read or if an error occurs.
+### How it works
+- Checks if BUFFER_SIZE is valid (> 0) and if fd is valid (>= 0).
+- Uses a static array str to store the buffer for each file descriptor fd. This allows get_next_line to handle - multiple file descriptors simultaneously.
+- Calls ft_line_allocation to read from fd and append data to str[fd].
+- If ft_line_allocation fails (returns NULL), returns NULL.
+- Calls ft_next_line to extract and return the next complete line from str[fd].
+- Calls ft_rem_line to remove the returned line from str[fd] and update str[fd] with the remaining data.
+- Returns the extracted line out
+### Use in get_next_line
+get_next_line_bonus operates similarly to get_next_line, but it manages multiple file descriptors by storing each buffer str[fd] separately.
+
+# Conclusion
+These functions collectively provide the core functionality needed for the get_next_line project. They ensure efficient handling of file I/O operations, dynamic memory allocation, and proper management of buffers to read and return lines from file descriptors. Understanding these functions and their interactions is crucial for implementing the project successfully and adhering to the requirements specified by the 42 School.
