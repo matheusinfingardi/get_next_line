@@ -15,22 +15,17 @@ char *get_next_line(int fd);
 - **fd:** The file descriptor from which to read the line.
 
  **Return Value:**
-
 - The line read from the file, including the terminating newline character \n (unless it's the end of the file without a newline).
 - NULL if there is nothing more to read or if an error occurred.
-
  **Expected Behavior:**
-
 - The function should allow reading a file line by line with successive calls.
 - It should work both for regular files and for the standard input (stdin).
-
 ## **Common Instructions**
-
 To meet the requirements of the 42 School, the project must adhere to specific rules and restrictions:
 
  **Norm Compliance:**
       - The code must conform to the 42 Norm, which includes coding style, function usage, and code organization.
-      All bonus files must also follow the Norm.
+      - All bonus files must also follow the Norm.
 
   **Stability and Safety:**
       - The function should not fail unexpectedly (e.g., segmentation faults, bus errors, double frees).
@@ -50,6 +45,9 @@ To meet the requirements of the 42 School, the project must adhere to specific r
 ## **Mandatory Part:**
 The get_next_line function and organize it into the following files:
 
- - **get_next_line.c:** The main implementation of the get_next_line function. </br>
- - **get_next_line_utils.c:** Auxiliary functions that support the main implementation. </br>
- - **get_next_line.h:** Declarations and prototypes required for the get_next_line function. </br>
+  **get_next_line.c:**
+  - The main implementation of the get_next_line function. </br>
+  **get_next_line_utils.c:**
+  - Auxiliary functions that support the main implementation. </br>
+  **get_next_line.h:**
+  - Declarations and prototypes required for the get_next_line function. </br>
