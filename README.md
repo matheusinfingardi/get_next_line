@@ -238,9 +238,8 @@ This function is the core of the get_next_line project. It manages the process o
 
 ### File Structure
 - **get_next_line.c:** Contains the main logic of reading and returning lines using the get_next_line function.
-- **get_next_line_utils.c:** (Not provided yet, but will include helper functions like ft_line_allocation, ft_next_line, and ft_rem_line).
+- **get_next_line_utils.c:** Include helper functions like ft_line_allocation, ft_next_line, and ft_rem_line.
 ### Function Interaction
 - **ft_line_allocation:** Reads and appends data to the static buffer. This function interacts with read and handles memory allocation and management. </br>
 - **ft_next_line:** Processes the buffer to extract the next complete line, including handling newline characters.
-</br>
-- **ft_rem_line:** Adjusts the buffer to retain any remaining data after a line has been extracted, ensuring the static buffer can continue from where it left off. </br>
+- **ft_rem_line:** Adjusts the buffer to retain any remaining data after a line has been extracted, ensuring the static buffer can continue from where it left off.
