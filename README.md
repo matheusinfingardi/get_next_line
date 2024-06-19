@@ -57,3 +57,5 @@ Expected behavior for get_next_line includes:
 - Returning the line read, including the \n character, except at the end of the file.
 - Efficient memory management to ensure no leaks.
 - Functioning with different BUFFER_SIZE values, from very small to very large, and handling buffer size changes dynamically.
+
+## **Bonus Part:**
