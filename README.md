@@ -48,7 +48,7 @@ All bonus files must also follow the Norm._
       Can not use libft in this project.
 
 ## **Mandatory Part:**
-For the mandatory part, need to implement the get_next_line function and organize it into the following files:
+The get_next_line function and organize it into the following files:
 
  - **get_next_line.c:** The main implementation of the get_next_line function. </br>
  - **get_next_line_utils.c:** Auxiliary functions that support the main implementation. </br>
