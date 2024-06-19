@@ -108,12 +108,27 @@ _This is the header file for the get_next_line project. It contains the function
 - **<fcntl.h>:** Provides file control options, like O_RDONLY for opening files in read-only mode.</br>
 
 ## Function Prototypes
+- **get_next_line Function:** This is the main function of the project. It reads and returns the next line from the file descriptor _fd_.
 ``` c
 char	*get_next_line(int fd);
 ```
-- **get_next_line Function:** This is the main function of the project. It reads and returns the next line from the file descriptor _fd_.
+- **ft_strlen Function:** Computes and returns the length of the string _str_.
 ```c
    size_t	ft_strlen(char *str);
 ```
-- **ft_strlen Function:** Computes and returns the length of the string _str_.
-
+- **ft_strchr Function:** Searches for the first occurrence of the character _c_ in the string _str_ and returns a pointer to this character within the string.
+```c
+   char	*ft_strchr(char *str, int c);
+```
+- **ft_strjoin Function:** Allocates memory and concatenates two strings, _s1_ and _s2_, returning a new string that is the result of this concatenation.
+```c
+   char	*ft_strjoin(char *s1, char *s2);
+```
+**ft_line_allocation Function:** Reads from the file descriptor _fd_ into a buffer and appends it to _str_, handling the memory allocation. This function likely supports get_next_line by handling the data reading part.
+```c
+   char	*ft_line_allocation(int fd, char *str);
+```
+**ft_next_line Function:** Processes the buffer str to identify and return the next line, including managing the remaining buffer after extracting the line.
+```c
+   char	*ft_next_line(char *str);
+```
