@@ -1,4 +1,4 @@
-# :green_circle: get_next_line
+# 🟦: get_next_line
 
 ## **General Description**
 
