@@ -74,11 +74,11 @@ For the bonus part, create additional files:
 ## **Detailed Explanation**
 To understand each part of the code, we will analyze and explain:
 ### **Main Function (get_next_line):**
-_Objective:_ Manage reading lines from the file described by fd.
-_Process:_ Detailed breakdown of how it reads in parts and constructs the final line to be returned.
+**Objective:** Manage reading lines from the file described by fd.</br>
+**Process:** Detailed breakdown of how it reads in parts and constructs the final line to be returned.</br>
 ### **Auxiliary Functions:**
-Objective: Facilitate operations such as buffer manipulation, copying, and character searching.
-Process: Explanation of each auxiliary function, its specific role, and how it integrates with the main function.
+**Objective:** Facilitate operations such as buffer manipulation, copying, and character searching.
+**Process:** Explanation of each auxiliary function, its specific role, and how it integrates with the main function.
 ### **File Structure:**
 - **get_next_line.c:** Contains the core logic for reading lines.
 - **get_next_line_utils.c:** Provides supporting utilities.
