@@ -43,7 +43,7 @@ Global variables are not allowed.
 Can not use libft in this project.
 
 ## **Mandatory Part:**
-The get_next_line function must be organized into the following files:
+_The get_next_line function must be organized into the following files:_
 
 - **get_next_line.c:**
 The main implementation of the get_next_line function. </br>
@@ -51,3 +51,9 @@ The main implementation of the get_next_line function. </br>
 Auxiliary functions that support the main implementation. </br>
 - **get_next_line.h:**
 Declarations and prototypes required for the get_next_line function. </br>
+
+_Expected behavior for get_next_line includes:_
+- Continuous reading from a file until all lines are processed.
+- Returning the line read, including the \n character, except at the end of the file.
+- Efficient memory management to ensure no leaks.
+- Functioning with different BUFFER_SIZE values, from very small to very large, and handling buffer size changes dynamically.
