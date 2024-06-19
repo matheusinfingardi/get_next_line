@@ -114,21 +114,30 @@ char	*get_next_line(int fd);
 ```
 - **ft_strlen Function:** Computes and returns the length of the string _str_.
 ```c
-   size_t	ft_strlen(char *str);
+size_t	ft_strlen(char *str);
 ```
 - **ft_strchr Function:** Searches for the first occurrence of the character _c_ in the string _str_ and returns a pointer to this character within the string.
 ```c
-   char	*ft_strchr(char *str, int c);
+char	*ft_strchr(char *str, int c);
 ```
 - **ft_strjoin Function:** Allocates memory and concatenates two strings, _s1_ and _s2_, returning a new string that is the result of this concatenation.
 ```c
-   char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin(char *s1, char *s2);
 ```
-**ft_line_allocation Function:** Reads from the file descriptor _fd_ into a buffer and appends it to _str_, handling the memory allocation. This function likely supports get_next_line by handling the data reading part.
+- **ft_line_allocation Function:** Reads from the file descriptor _fd_ into a buffer and appends it to _str_, handling the memory allocation. This function likely supports get_next_line by handling the data reading part.
 ```c
-   char	*ft_line_allocation(int fd, char *str);
+char	*ft_line_allocation(int fd, char *str);
 ```
-**ft_next_line Function:** Processes the buffer str to identify and return the next line, including managing the remaining buffer after extracting the line.
+- **ft_next_line Function:** Processes the buffer _str_ to identify and return the next line, including managing the remaining buffer after extracting the line.
 ```c
-   char	*ft_next_line(char *str);
+char	*ft_next_line(char *str);
 ```
+- **ft_rem_line Function:** Handles the memory management for the remaining part of the buffer after the current line has been extracted.
+```c
+char	*ft_rem_line(char *line);
+```
+### Overview of Source Files
+**get_next_line.c** </br>
+This file will contain the main logic for the get_next_line function. It coordinates reading from the file descriptor, managing the buffer, and returning each line one at a time. The functions defined here are responsible for handling the core task of reading and returning lines. </br>
+**get_next_line_utils.c** </br>
+This file provides auxiliary functions that support the main get_next_line function. These typically include utility functions for string manipulation and buffer handling, such as calculating the length of a string _(ft_strlen)_, searching for a character in a string _(ft_strchr)_, joining two strings _(ft_strjoin)_, and managing the buffer _(ft_line_allocation, ft_next_line, ft_rem_line)_.
