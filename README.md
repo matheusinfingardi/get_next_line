@@ -59,3 +59,27 @@ Expected behavior for get_next_line includes:
 - Functioning with different BUFFER_SIZE values, from very small to very large, and handling buffer size changes dynamically.
 
 ## **Bonus Part:**
+**Single Static Variable:**
+Implement get_next_line using only one static variable.
+
+**Support Multiple File Descriptors:**
+The function should handle reading from multiple file descriptors simultaneously without confusing their reading positions.
+For example, it should be able to read from fd 3, then fd 4, then fd 3 again without losing the reading position in any file descriptor.
+
+For the bonus part, create additional files:
+- **get_next_line_bonus.c:** The implementation of get_next_line with support for multiple file descriptors and using a static variable. </br>
+- **get_next_line_bonus.h:** Declarations and prototypes specific to the bonus part. </br>
+- **get_next_line_utils_bonus.c:** Auxiliary functions specific to the bonus part. </br>
+
+## **Detailed Explanation**
+To understand each part of the code, we will analyze and explain:
+### **Main Function (get_next_line):**
+_Objective:_ Manage reading lines from the file described by fd.
+_Process:_ Detailed breakdown of how it reads in parts and constructs the final line to be returned.
+### **Auxiliary Functions:**
+Objective: Facilitate operations such as buffer manipulation, copying, and character searching.
+Process: Explanation of each auxiliary function, its specific role, and how it integrates with the main function.
+### **File Structure:**
+- **get_next_line.c:** Contains the core logic for reading lines.
+- **get_next_line_utils.c:** Provides supporting utilities.
+- **get_next_line.h:** Defines the prototype of the function and any necessary headers.
