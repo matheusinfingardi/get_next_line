@@ -329,4 +329,139 @@ Returns NULL if memory allocation fails or if s2 is NULL.
 - Copies characters from s1 and s2 into out using while loops until the null terminators are encountered.
 - Frees the memory allocated for s1 since its contents have been copied into out.
 ### Use in get_next_line
-Used in ft_line_allocation to check for the presence of a newline character (\n) in the current buffer str, indicating the end of a line.
+Used in ft_line_allocation to append data read from the file descriptor (buff) to the existing buffer (str), extending str dynamically as needed.
+
+### ft_line_allocation
+``` c
+char	*ft_line_allocation(int fd, char *str)
+{
+	char	*buff;
+	ssize_t	dim;
+
+	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buff)
+		return (NULL);
+	dim = 1;
+	while (!(ft_strchr(str, '\n')) && dim > 0)
+	{
+		dim = read(fd, buff, BUFFER_SIZE);
+		if (dim == -1)
+		{
+			free(buff);
+			return (NULL);
+		}
+		buff[dim] = '\0';
+		str = ft_strjoin(str, buff);
+	}
+	free(buff);
+	return (str);
+}
+```
+### Purpose
+Reads data from a file descriptor fd and appends it to the buffer str.
+### Parameters
+**int fd:** The file descriptor from which to read data.
+**char *str:*** The current buffer containing previously read data.
+### Return Value
+Returns an updated buffer str containing the appended data.
+Returns NULL if an error occurs during reading or memory allocation fails.
+### How it works
+- Allocates a temporary buffer buff of size BUFFER_SIZE + 1.
+- Reads data from fd into buff using the read function until either a newline character (\n) is found in str or the end of file (dim == 0).
+- Checks for errors during reading (dim == -1) and returns NULL if an error occurs.
+- Appends buff to str using ft_strjoin, extending str dynamically as needed.
+- Frees buff after all data has been read and appended to str.
+### Use in get_next_line
+Used in get_next_line to read from fd and build up the buffer str with data from the file descriptor, ensuring it handles varying buffer sizes defined by BUFFER_SIZE.
+
+### ft_next_line
+``` c
+char	*ft_next_line(char *str)
+{
+	char	*new;
+	int	i;
+	
+	i = 0;
+	if (str[i] == 0)
+		return (NULL);
+	while (str[i] && str[i] != '\n')
+		i++;
+	new = (char *)malloc(sizeof(char) * (i + 2));
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (str[i] && str[i] != '\n')
+	{
+		new[i] = str[i];
+		i++;
+	}
+	if (str[i] == '\n')
+	{
+		new[i] = '\n';
+		i++;
+	}
+	new[i] = '\0';
+	return (new);
+}
+```
+### Purpose
+Extracts the next complete line from the buffer str.
+### Parameters
+**char *str:*** The buffer containing data read from a file descriptor.
+### Return Value
+Returns a newly allocated string that contains the next complete line from str, including the terminating newline character \n.
+Returns NULL if there are no complete lines left in str or if memory allocation fails.
+### How it works
+- Checks if str is empty (str[i] == 0). If so, returns NULL.
+- Iterates through str until it finds either a newline character (\n) or reaches the end of str.
+- Allocates memory for new to hold the extracted line plus the newline character (if present).
+- Copies characters from str into new until it encounters \n or reaches the end of str.
+- If \n is found, copies it to new.
+- Terminates new with \0 and returns it as the next complete line.
+### Use in get_next_line
+Used in get_next_line to extract each complete line from the buffer str and return it as the output of get_next_line.
+
+### ft_rem_line
+``` c
+char	*ft_rem_line(char *line)
+{
+	char	*str;
+	int	i;
+	int	j;
+
+	i = 0;
+	while (line[i] && line[i] != '\n')
+	{
+		i++;
+	}
+	if (!line[i])
+	{
+		free(line);
+		return (NULL);
+	}
+	str = (char *)malloc(sizeof(char) * (ft_strlen(line) - i + 1));
+	if (!str)
+		return (NULL);
+	i++;
+	j = 0;
+	while (line[i])
+		str[j++] = line[i++];
+	str[j] = '\0';
+	free(line);
+	return (str);
+}
+```
+### Purpose
+Adjusts the buffer line to remove the current line that has been read and return the remaining data.
+### Parameters
+**char *line:*** The buffer containing data read from a file descriptor.
+### Return Value
+Returns an updated buffer str containing the remaining data after removing the current line.
+Returns NULL if all lines have been read or if memory allocation fails.
+Returns NULL if there are no complete lines left in str or if memory allocation fails.
+### How it works
+- Finds the position of the newline character (\n) in line using a while loop.
+- If no newline character is found (!line[i]), frees line and returns NULL.
+- Allocates memory for str to hold the remaining data in line after the newline character.
+- Copies remaining characters from line into str starting from the position after the newline character.
+- Frees line after copying and returns str as the updated
