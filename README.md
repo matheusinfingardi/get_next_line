@@ -174,7 +174,35 @@ Reads the next line from a file descriptor fd and returns it as a string.
 A string containing the next line from the file, including the terminating newline character _\n_, if present.
 Returns _NULL_ if there is nothing more to read or if an error occurred.
 ### How it works
-1- **Static Variable Initialization:**
+- The function initializes a counter i to 0.
+- It checks if the input string str is NULL. If it is, it returns 0, indicating that there is no string to process.
+- It then enters a while loop that increments the counter i until it reaches the end of the string (the null byte \0).
+- Finally, it returns the value of i, which is the length of the string.
 
-    The function uses a static char *str to maintain a buffer between successive calls. This static variable holds any remaining data that was not yet returned as a complete line.
 ### Use in get_next_line
+
+
+
+
+### How it works
+**1- Static Variable Initialization:**
+The function uses a static char *str to maintain a buffer between successive calls. This static variable holds any remaining data that was not yet returned as a complete line.
+</br>
+**2- Validation:**
+The function first checks if BUFFER_SIZE is valid (greater than 0) and if the file descriptor fd is non-negative. If either condition is not met, it returns NULL.
+</br>
+**3- Reading from File Descriptor:**
+It calls ft_line_allocation(fd, str), which reads data from the file descriptor and appends it to the existing str buffer. This function is responsible for handling the actual reading and buffer management.
+</br>
+**4- Check for read data:**
+If ft_line_allocation returns NULL, meaning no data was read or an error occurred, get_next_line returns NULL.
+</br>
+**5- Extracting the Next Line:**
+It then calls ft_next_line(str), which processes the buffer to extract the next complete line. This function returns the next line to be output by get_next_line.
+</br>
+**6- Managing the Buffer:**
+After extracting the line, it updates str by calling ft_rem_line(str). This function adjusts the buffer to remove the part that has been returned and keep any remaining data for the next call.
+</br>
+**7- Returning the Line:**
+Finally, the function returns the extracted line (out).
+</br>
