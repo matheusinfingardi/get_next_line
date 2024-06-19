@@ -1,5 +1,4 @@
-:diamond_shape_with_a_dot_inside:
-# get_next_line
+# :diamond_shape_with_a_dot_inside: get_next_line
 
 ## **General Description**
 
