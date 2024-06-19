@@ -24,30 +24,30 @@ char *get_next_line(int fd);
 To meet the requirements of the 42 School, the project must adhere to specific rules and restrictions:
 
  **Norm Compliance:** </br>
-      - The code must conform to the 42 Norm, which includes coding style, function usage, and code organization.
-      - All bonus files must also follow the Norm.
+The code must conform to the 42 Norm, which includes coding style, function usage, and code organization.
+All bonus files must also follow the Norm.
 
   **Stability and Safety:** </br>
-      - The function should not fail unexpectedly (e.g., segmentation faults, bus errors, double frees).
-      - All dynamically allocated memory must be properly freed, with no memory leaks.
+The function should not fail unexpectedly (e.g., segmentation faults, bus errors, double frees).
+All dynamically allocated memory must be properly freed, with no memory leaks.
 
   **Compilation:** </br>
-      - Must use cc and the flags -Wall -Wextra -Werror.
-      - The project must compile with various BUFFER_SIZE values defined using -D BUFFER_SIZE=n.
+Must use cc and the flags -Wall -Wextra -Werror.
+The project must compile with various BUFFER_SIZE values defined using -D BUFFER_SIZE=n.
 
   **Allowed Functions:** </br>
-      - The only allowed external functions are read, malloc, and free.
+The only allowed external functions are read, malloc, and free.
 
   **No Globals or libft:** </br>
-      - Global variables are not allowed.
-      - Can not use libft in this project.
+Global variables are not allowed.
+Can not use libft in this project.
 
 ## **Mandatory Part:**
 The get_next_line function and organize it into the following files:
 
-- **get_next_line.c:** </br>
+**get_next_line.c:** </br>
 The main implementation of the get_next_line function. </br>
-- **get_next_line_utils.c:** </br>
+**get_next_line_utils.c:** </br>
 Auxiliary functions that support the main implementation. </br>
-- **get_next_line.h:** </br>
+**get_next_line.h:** </br>
 Declarations and prototypes required for the get_next_line function. </br>
