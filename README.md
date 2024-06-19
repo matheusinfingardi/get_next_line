@@ -6,5 +6,5 @@
 
 ## **Project Objective**
 
-You need to implement the function get_next_line with the following prototype:
+You need to implement the function get_next_line with the following prototype: </br>
 `char *get_next_line(int fd);`
