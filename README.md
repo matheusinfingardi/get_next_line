@@ -229,7 +229,7 @@ After extracting the line, it updates str by calling ft_rem_line(str). This func
 </br>  </br>
 - **Returning the Line:** </br>
 Finally, the function returns the extracted line (out).
-</br>
+
 ### Use in get_next_line
 This function is the core of the get_next_line project. It manages the process of reading from a file descriptor and returning one line at a time. By using a static variable, it maintains state across multiple calls, allowing it to continue reading from where it left off.
 </br>
