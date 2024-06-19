@@ -180,7 +180,7 @@ Returns _NULL_ if there is nothing more to read or if an error occurred.
 - Finally, it returns the value of i, which is the length of the string.
 
 ### Use in get_next_line
-
+This function is used to determine the length of strings throughout the implementation, which is essential for various buffer and string operations
 
 
 
