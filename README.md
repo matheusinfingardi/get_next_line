@@ -45,9 +45,9 @@ Can not use libft in this project.
 ## **Mandatory Part:**
 The get_next_line function and organize it into the following files:
 
-**get_next_line.c:** </br>
+- **get_next_line.c:**
 The main implementation of the get_next_line function. </br>
-**get_next_line_utils.c:** </br>
+- **get_next_line_utils.c:**
 Auxiliary functions that support the main implementation. </br>
-**get_next_line.h:** </br>
+- **get_next_line.h:**
 Declarations and prototypes required for the get_next_line function. </br>
