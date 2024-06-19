@@ -1,4 +1,4 @@
-# get_next_line
+:diamond_shape_with_a_dot_inside: # get_next_line
 
 ## **General Description**
 
@@ -16,10 +16,10 @@ char *get_next_line(int fd);
 
 ### **Return Value:**
 
-`    The line read from the file, including the terminating newline character \n (unless it's the end of the file without a newline).
-    NULL if there is nothing more to read or if an error occurred.```
+    The line read from the file, including the terminating newline character \n (unless it's the end of the file without a newline).
+    NULL if there is nothing more to read or if an error occurred.
 
 ### **Expected Behavior:**
-`
+
     The function should allow reading a file line by line with successive calls.
-    It should work both for regular files and for the standard input (stdin).```
+    It should work both for regular files and for the standard input (stdin).
