@@ -12,7 +12,7 @@ char *get_next_line(int fd);
 ```
 ### **Parameter:**
 
-fd: The file descriptor from which to read the line.
+**fd:** The file descriptor from which to read the line.
 
 ### **Return Value:**
 
@@ -23,3 +23,33 @@ NULL if there is nothing more to read or if an error occurred.
 
 The function should allow reading a file line by line with successive calls.
 It should work both for regular files and for the standard input (stdin).
+
+## **Common Instructions**
+
+To meet the requirements of the 42 School, the project must adhere to specific rules and restrictions:
+
+### **Norm Compliance:**
+_The code must conform to the 42 Norm, which includes coding style, function usage, and code organization.
+All bonus files must also follow the Norm._
+
+  **Stability and Safety:**
+      The function should not fail unexpectedly (e.g., segmentation faults, bus errors, double frees).
+      All dynamically allocated memory must be properly freed, with no memory leaks.
+
+  **Compilation:**
+      Must use cc and the flags -Wall -Wextra -Werror.
+      The project must compile with various BUFFER_SIZE values defined using -D BUFFER_SIZE=n.
+
+  **Allowed Functions:**
+      The only allowed external functions are read, malloc, and free.
+
+  **No Globals or libft:**
+      Global variables are not allowed.
+      Can not use libft in this project.
+
+## **Mandatory Part:**
+For the mandatory part, need to implement the get_next_line function and organize it into the following files:
+
+  **get_next_line.c:** The main implementation of the get_next_line function.
+  **get_next_line_utils.c:** Auxiliary functions that support the main implementation.
+  **get_next_line.h:** Declarations and prototypes required for the get_next_line function.
