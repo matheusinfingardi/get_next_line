@@ -43,7 +43,7 @@ Global variables are not allowed.
 Can not use libft in this project.
 
 ## **Mandatory Part:**
-The get_next_line function and organize it into the following files:
+The get_next_line function must be organized into the following files:
 
 - **get_next_line.c:**
 The main implementation of the get_next_line function. </br>
