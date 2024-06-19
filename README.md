@@ -77,7 +77,7 @@ To understand each part of the code, we will analyze and explain:
 **Objective:** Manage reading lines from the file described by fd.</br>
 **Process:** Detailed breakdown of how it reads in parts and constructs the final line to be returned.</br>
 ### **Auxiliary Functions:**
-**Objective:** Facilitate operations such as buffer manipulation, copying, and character searching.
+**Objective:** Facilitate operations such as buffer manipulation, copying, and character searching.</br>
 **Process:** Explanation of each auxiliary function, its specific role, and how it integrates with the main function.
 ### **File Structure:**
 - **get_next_line.c:** Contains the core logic for reading lines.
