@@ -45,9 +45,9 @@ To meet the requirements of the 42 School, the project must adhere to specific r
 ## **Mandatory Part:**
 The get_next_line function and organize it into the following files:
 
-- **get_next_line.c:**
+- **get_next_line.c:** </br>
 The main implementation of the get_next_line function. </br>
-- **get_next_line_utils.c:**
+- **get_next_line_utils.c:** </br>
 Auxiliary functions that support the main implementation. </br>
-- **get_next_line.h:**
+- **get_next_line.h:** </br>
 Declarations and prototypes required for the get_next_line function. </br>
