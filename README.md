@@ -139,5 +139,6 @@ char	*ft_rem_line(char *line);
 ### Overview of Source Files
 **get_next_line.c** </br>
 This file will contain the main logic for the get_next_line function. It coordinates reading from the file descriptor, managing the buffer, and returning each line one at a time. The functions defined here are responsible for handling the core task of reading and returning lines. </br>
+</br>
 **get_next_line_utils.c** </br>
 This file provides auxiliary functions that support the main get_next_line function. These typically include utility functions for string manipulation and buffer handling, such as calculating the length of a string _(ft_strlen)_, searching for a character in a string _(ft_strchr)_, joining two strings _(ft_strjoin)_, and managing the buffer _(ft_line_allocation, ft_next_line, ft_rem_line)_.
