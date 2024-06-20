@@ -17,7 +17,8 @@ char *get_next_line(int fd);
  **Return Value:**
 - The line read from the file, including the terminating newline character \n (unless it's the end of the file without a newline).
 - NULL if there is nothing more to read or if an error occurred. </br>
- **Expected Behavior:**
+
+**Expected Behavior:**
 - The function should allow reading a file line by line with successive calls.
 - It should work both for regular files and for the standard input (stdin).
 ## **Common Instructions**
