@@ -588,7 +588,40 @@ Ensures that the loop continues as long as there are bytes successfully read fro
 
 ## ft_line_allocation
 > The main goal of this project is learn how to lead with memory leaks, so in this function we have malloc, every time we malloc space in memory for something we need to free it at some point.
-### Q1- Where does ft_new_line free the space that was malloc in ?
+### Q1- Where does ft_new_line free the space that was malloc?
+```c
+char	*ft_next_line(char *str)
+{
+	char	*new;
+	int	i;
+	
+	i = 0;
+	if (str[i] == 0)
+		return (NULL);
+	while (str[i] && str[i] != '\n')
+		i++;
+	new = (char *)malloc(sizeof(char) * (i + 2));
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (str[i] && str[i] != '\n')
+	{
+		new[i] = str[i];
+		i++;
+	}
+	if (str[i] == '\n')
+	{
+		new[i] = '\n';
+		i++;
+	}
+	new[i] = '\0';
+	return (new);
+}
+```
+Memory Allocation:
+``` c
+new = (char *)malloc(sizeof(char) * (i + 2));
+``` 
 
 
 
