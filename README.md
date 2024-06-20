@@ -509,6 +509,9 @@ get_next_line_bonus operates similarly to get_next_line, but it manages multiple
 # Questions and Answer (Q&A)
 ## get_next_line.c
 ### Q1- Static Variables and how it works in get_next_line
+``` c
+static char	*str;
+```
 In the context of the get_next_line function, the static variable static char *str plays a crucial role in maintaining the state between successive calls to the function. Here’s how it works:
 - **Purpose:** The static variable str is used to store the leftover or remaining data from previous reads that haven’t been fully processed into lines yet.
 - **Memory Persistense:** Unlike local variables, which are created and destroyed each time a function is called, static variables retain their values between function calls. This means str retains the last state across multiple invocations of get_next_line.
@@ -521,6 +524,10 @@ In the context of the get_next_line function, the static variable static char *s
 	- Careful management is required to ensure str is properly updated and freed when no longer needed, especially to avoid memory leaks.
 
 ### Q2- Why does get_next_line return NULL if !str?
+``` c
+	if (!str)
+		return (NULL);
+``
 The condition if (!str) in the get_next_line function is crucial for error handling and indicating the end of file or failure to read a line. Here’s why it returns NULL:
 After calling ft_line_allocation, get_next_line checks if str is NULL (if (!str)).
 If str is NULL, it means:
