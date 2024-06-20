@@ -6,7 +6,7 @@
 
 ## **Project Objective**
 
-Implement the function get_next_line with the following prototype: </br>
+**Implement the function get_next_line with the following prototype:** </br>
 ``` c
 char *get_next_line(int fd);
 ```
