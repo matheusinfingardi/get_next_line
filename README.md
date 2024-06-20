@@ -586,7 +586,10 @@ Ensures that the loop continues as long as there are bytes successfully read fro
 - If bytes_read is 0, it indicates the end of the file (EOF), and the loop should stop.
 - If bytes_read is -1, an error occurred during reading, and the loop should also stop.
 
-### Q3- while loop conditions (!(ft_strchr(str, '\n')) && bytes_read > 0)
+## ft_line_allocation
+> The main goal of this project is learn how to lead with memory leaks, so in this function we have malloc, every time we malloc space in memory for something we need to free it at some point.
+### Q1- Where does ft_new_line free the space that was malloc in ?
+
 
 
 # Conclusion
